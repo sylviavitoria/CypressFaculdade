@@ -50,6 +50,22 @@ Cypress.Commands.add('submitProfessorForm', () => {
   cy.get('#btn-cadastrar').click()
 })
 
+Cypress.Commands.add('navigateToDisciplinaCadastro', () => {
+  cy.get('#menu-disciplinas').click()       
+  cy.get('#tab-create').click() 
+})
+
+Cypress.Commands.add('fillDisciplinaForm', (disciplina) => {
+  if (disciplina.nome) cy.get('#nome').clear().type(disciplina.nome)
+  if (disciplina.codigo) cy.get('#codigo').clear().type(disciplina.codigo)
+  if (disciplina.professorId !== undefined) cy.get('#professorId').select(disciplina.professorId)
+})
+
+Cypress.Commands.add('submitDisciplinaForm', () => {
+  cy.get('#btn-cadastrar').click()
+})
+
+
 
 
 // For more comprehensive examples of custom
