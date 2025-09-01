@@ -35,6 +35,22 @@ Cypress.Commands.add('submitAlunoForm', () => {
   cy.get('#btn-cadastrar').click()
 })
 
+Cypress.Commands.add('navigateToProfessorCadastro', () => {
+  cy.get('#menu-professores').click()       
+  cy.get('#tab-create').click() 
+})
+
+Cypress.Commands.add('fillProfessorForm', (professor) => {
+  if (professor.nome) cy.get('#nome').clear().type(professor.nome)
+  if (professor.email) cy.get('#email').clear().type(professor.email)
+  if (professor.senha) cy.get('#senha').clear().type(professor.senha)
+})
+
+Cypress.Commands.add('submitProfessorForm', () => {
+  cy.get('#btn-cadastrar').click()
+})
+
+
 
 // For more comprehensive examples of custom
 // commands please read more here:
