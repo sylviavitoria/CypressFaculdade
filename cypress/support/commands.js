@@ -19,6 +19,22 @@ Cypress.Commands.add('userLogin', (email, senha) => {
   cy.get('.btn-primary').should('be.visible').click()
 })
 
+Cypress.Commands.add('navigateToAlunoCadastro', () => {
+  cy.get('#menu-alunos').click()       
+  cy.get('#tab-create').click() 
+})
+
+Cypress.Commands.add('fillAlunoForm', (aluno) => {
+  if (aluno.nome) cy.get('#nome').clear().type(aluno.nome)
+  if (aluno.email) cy.get('#email').clear().type(aluno.email)
+  if (aluno.matricula) cy.get('#matricula').clear().type(aluno.matricula)
+  if (aluno.senha) cy.get('#senha').clear().type(aluno.senha)
+})
+
+Cypress.Commands.add('submitAlunoForm', () => {
+  cy.get('#btn-cadastrar').click()
+})
+
 
 // For more comprehensive examples of custom
 // commands please read more here:
