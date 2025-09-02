@@ -72,16 +72,15 @@ cypress/
 │
 ├── e2e/
 │   └── tests/
-│       ├── Aluno.cy.js       # Testes de cadastro de alunos
-│       ├── Disciplina.cy.js  # Testes de cadastro de disciplinas
+│       ├── Aluno.cy.js       # Testes de alunos
+│       ├── Disciplina.cy.js  # Testes de disciplinas
 │       ├── Login.cy.js       # Testes de login
-│       ├── Matricula.cy.js   # Testes de matrícula de alunos em disciplinas
-│       └── Professor.cy.js   # Testes de cadastro de professores
+│       ├── Matricula.cy.js   # Testes de matrícula 
+│       └── Professor.cy.js   # Testes de professores
 │
 │
 └── support/
     ├── commands.js           # Comandos personalizados do Cypress
-    └── e2e.js                # Configurações globais para testes e2e
 ```
 ---
 
