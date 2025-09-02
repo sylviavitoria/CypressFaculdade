@@ -6,7 +6,7 @@ describe('Cadastro de novo professor', () => {
 
     const novoProfessor = {
         nome: 'Carlos Oliveira',
-        email: 'carlos.oliveira@exemplo.com',
+        email: 'carlos.oliveira@gmail.com',
         senha: '123'
     }
 
