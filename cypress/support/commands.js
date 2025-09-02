@@ -1,9 +1,3 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-
 Cypress.Commands.add('sessionLogin', () => {
 	cy.visit('/login')
 	cy.get('#email').should('be.visible')
@@ -65,26 +59,22 @@ Cypress.Commands.add('submitDisciplinaForm', () => {
   cy.get('#btn-cadastrar').click()
 })
 
+Cypress.Commands.add('navigateToMatriculaCadastro', () => {
+  cy.get('#menu-matriculas').click()       
+  cy.get('#tab-create').click() 
+})
 
+Cypress.Commands.add('fillMatriculaForm', (matricula) => {
+  if (matricula.alunoId !== undefined) cy.get('#alunoId').select(matricula.alunoId)
+  if (matricula.disciplinaId !== undefined) cy.get('#disciplinaId').select(matricula.disciplinaId)
+})
 
+Cypress.Commands.add('submitMatriculaForm', () => {
+  cy.get('#btn-cadastrar').click()
+})
 
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('searchMatriculaById', (id) => {
+  cy.get('#searchId').clear().type(id)
+  cy.get('#btn-buscar').click()
+})
+
